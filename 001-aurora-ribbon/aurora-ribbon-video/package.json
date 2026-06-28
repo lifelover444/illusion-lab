@@ -1,0 +1,11 @@
+{
+  "name": "aurora-ribbon-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.7.17 preview",
+    "check": "npx --yes hyperframes@0.7.17 lint && npx --yes hyperframes@0.7.17 validate --timeout 30000 && npx --yes hyperframes@0.7.17 inspect --timeout 30000",
+    "render": "npx --yes hyperframes@0.7.17 render",
+    "publish": "npx --yes hyperframes@0.7.17 publish"
+  }
+}

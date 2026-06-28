@@ -1,0 +1,18 @@
+{
+  "name": "illusion-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "001-aurora-ribbon"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
+    "dev:001": "npm run dev --workspace @illusion-lab/aurora-ribbon",
+    "build": "npm run build --workspaces",
+    "build:001": "npm run build --workspace @illusion-lab/aurora-ribbon",
+    "test": "npm run test --workspaces",
+    "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
+    "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon"
+  }
+}
