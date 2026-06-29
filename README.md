@@ -7,18 +7,19 @@ Illusion Lab 是一个 Three.js 视觉错觉实验集合。每个编号目录都
 | 编号 | 名称 | 简介 |
 | --- | --- | --- |
 | `001-aurora-ribbon` | 极光丝带 | 一个发光丝带形态的视觉错觉实验，观看者可能会感知到旋转方向变化。 |
+| `002-spin-sphere` | 旋转点阵球 | 一个正交投影的点阵球双向旋转感知错觉，适合录制竖屏短视频。 |
 
 规划中的目录结构：
 
 ```text
 illusion-lab/
 ├─ 001-aurora-ribbon/
-├─ 002-rotating-rings/
+├─ 002-spin-sphere/
 ├─ 003-moire-wave/
 └─ 004-depth-grid/
 ```
 
-目前只有 `001-aurora-ribbon`。
+目前包含 `001-aurora-ribbon` 和 `002-spin-sphere`。
 
 ## 快速开始
 
@@ -47,8 +48,10 @@ npm run dev:001
 ```powershell
 npm run build      # 构建所有项目
 npm run build:001  # 只构建 001-aurora-ribbon
+npm run build:002  # 只构建 002-spin-sphere
 npm run test       # 测试所有项目
 npm run test:001   # 只测试 001-aurora-ribbon
+npm run test:002   # 只测试 002-spin-sphere
 ```
 
 ## 新项目约定

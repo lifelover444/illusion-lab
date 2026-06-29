@@ -4,15 +4,20 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "001-aurora-ribbon"
+    "001-aurora-ribbon",
+    "002-spin-sphere"
   ],
   "scripts": {
     "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
     "dev:001": "npm run dev --workspace @illusion-lab/aurora-ribbon",
+    "dev:002": "npm run dev --workspace @illusion-lab/spin-sphere",
     "build": "npm run build --workspaces",
     "build:001": "npm run build --workspace @illusion-lab/aurora-ribbon",
+    "build:002": "npm run build --workspace @illusion-lab/spin-sphere",
     "test": "npm run test --workspaces",
     "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
-    "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon"
+    "test:002": "npm run test --workspace @illusion-lab/spin-sphere",
+    "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon",
+    "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere"
   }
 }

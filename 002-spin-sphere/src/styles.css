@@ -1,0 +1,92 @@
+:root {
+  color: #ffffff;
+  background: #0a0a1a;
+  font-family:
+    "Noto Sans SC", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(26, 26, 46, 0.95) 0%, rgba(18, 18, 38, 0.96) 50%, #0a0a1a 100%),
+    #0a0a1a;
+}
+
+.stage {
+  position: relative;
+  width: min(100vw, 56.25svh);
+  height: min(100svh, 177.7778vw);
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(160, 232, 255, 0.055), transparent 34%),
+    radial-gradient(circle at 50% 54%, #1a1a2e 0%, #111126 56%, #0a0a1a 100%);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 48%, transparent 0%, transparent 48%, rgba(4, 4, 14, 0.42) 100%);
+}
+
+#scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.prompt {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(4.25rem, 10svh, 6.5rem);
+  z-index: 3;
+  width: min(28rem, calc(100% - 2rem));
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.2rem, 2.45svh, 1.62rem);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  text-wrap: balance;
+  pointer-events: none;
+  transform: translateX(-50%);
+  animation: prompt-breathe 4s ease-in-out infinite;
+}
+
+@keyframes prompt-breathe {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
