@@ -5,19 +5,29 @@
   "type": "module",
   "workspaces": [
     "001-aurora-ribbon",
-    "002-spin-sphere"
+    "002-spin-sphere",
+    "003-rotating-crow",
+    "003-rotating-crow-keyframes"
   ],
   "scripts": {
     "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
     "dev:001": "npm run dev --workspace @illusion-lab/aurora-ribbon",
     "dev:002": "npm run dev --workspace @illusion-lab/spin-sphere",
+    "dev:003": "npm run dev --workspace @illusion-lab/rotating-crow",
+    "dev:003-keyframes": "npm run dev --workspace @illusion-lab/rotating-crow-keyframes",
     "build": "npm run build --workspaces",
     "build:001": "npm run build --workspace @illusion-lab/aurora-ribbon",
     "build:002": "npm run build --workspace @illusion-lab/spin-sphere",
+    "build:003": "npm run build --workspace @illusion-lab/rotating-crow",
+    "build:003-keyframes": "npm run build --workspace @illusion-lab/rotating-crow-keyframes",
     "test": "npm run test --workspaces",
     "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
     "test:002": "npm run test --workspace @illusion-lab/spin-sphere",
+    "test:003": "npm run test --workspace @illusion-lab/rotating-crow",
+    "test:003-keyframes": "npm run test --workspace @illusion-lab/rotating-crow-keyframes",
     "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon",
-    "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere"
+    "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere",
+    "preview:003": "npm run preview --workspace @illusion-lab/rotating-crow",
+    "preview:003-keyframes": "npm run preview --workspace @illusion-lab/rotating-crow-keyframes"
   }
 }

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>旋转乌鸦错觉</title>
+  </head>
+  <body>
+    <main class="stage" aria-label="旋转乌鸦视觉错觉">
+      <canvas id="scene"></canvas>
+      <p class="prompt" aria-live="polite">盯住剪影，旋转方向可能会自己翻转</p>
+      <form class="controls" aria-label="错觉调节">
+        <label>
+          <span>速度</span>
+          <input id="speed" type="range" min="0.55" max="6" value="1.18" step="0.05" />
+          <output id="speed-value" for="speed">1.18x</output>
+        </label>
+        <label>
+          <span>背景</span>
+          <input id="spot" type="range" min="0.72" max="1.18" value="1" step="0.02" />
+        </label>
+        <label class="toggle">
+          <input id="eye" type="checkbox" />
+          <span>眼睛提示</span>
+        </label>
+        <button id="pause" type="button">暂停</button>
+      </form>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

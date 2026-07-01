@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>乌鸦剪影旋转错觉</title>
+  </head>
+  <body>
+    <main class="stage" aria-label="乌鸦剪影旋转错觉">
+      <canvas id="scene"></canvas>
+      <p class="prompt">隐藏眼圈时，旋转方向更容易自然翻转</p>
+      <form class="controls" aria-label="错觉调节">
+        <label>
+          <span>速度</span>
+          <input id="speed" type="range" min="0.7" max="6" value="1.65" step="0.05" />
+          <output id="speed-value" for="speed">1.65x</output>
+        </label>
+        <label>
+          <span>聚光</span>
+          <input id="spot" type="range" min="0.75" max="1.18" value="1" step="0.02" />
+        </label>
+        <label class="toggle">
+          <input id="eye" type="checkbox" />
+          <span>眼圈</span>
+        </label>
+        <button id="pause" type="button">暂停</button>
+      </form>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

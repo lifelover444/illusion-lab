@@ -1,6 +1,6 @@
 # Illusion Lab
 
-Illusion Lab 是一个 Three.js 视觉错觉实验集合。每个编号目录都是一个独立的小项目，包含自己的 Vite 入口、源码、测试和可选的生成媒体文件。
+Illusion Lab 是一个视觉错觉实验集合。每个编号目录都是一个独立的小项目，包含自己的 Vite 入口、源码、测试和可选的生成媒体文件。
 
 ## 项目列表
 
@@ -8,6 +8,8 @@ Illusion Lab 是一个 Three.js 视觉错觉实验集合。每个编号目录都
 | --- | --- | --- |
 | `001-aurora-ribbon` | 极光丝带 | 一个发光丝带形态的视觉错觉实验，观看者可能会感知到旋转方向变化。 |
 | `002-spin-sphere` | 旋转点阵球 | 一个正交投影的点阵球双向旋转感知错觉，适合录制竖屏短视频。 |
+| `003-rotating-crow` | 旋转乌鸦 | 一个旋转舞者式纯黑剪影错觉，观看者可能会感知到顺/逆时针方向反转。 |
+| `003-rotating-crow-keyframes` | 旋转乌鸦关键帧版 | 一套重新设计的乌鸦剪影关键帧动画，用翼尖、尾羽和脚爪强化双稳态方向错觉。 |
 
 规划中的目录结构：
 
@@ -15,11 +17,17 @@ Illusion Lab 是一个 Three.js 视觉错觉实验集合。每个编号目录都
 illusion-lab/
 ├─ 001-aurora-ribbon/
 ├─ 002-spin-sphere/
-├─ 003-moire-wave/
-└─ 004-depth-grid/
+├─ 003-rotating-crow/
+├─ 003-rotating-crow-keyframes/
+├─ 004-moire-wave/
+└─ 005-depth-grid/
 ```
 
-目前包含 `001-aurora-ribbon` 和 `002-spin-sphere`。
+目前包含 `001-aurora-ribbon`、`002-spin-sphere`、`003-rotating-crow` 和 `003-rotating-crow-keyframes`。
+
+## 技术栈说明
+
+本仓库不限定统一技术栈。每个实验可以根据错觉目标和交互需求选择合适的渲染、动画与测试方案。
 
 ## 快速开始
 
@@ -41,6 +49,18 @@ npm run dev
 npm run dev:001
 ```
 
+或启动旋转乌鸦项目：
+
+```powershell
+npm run dev:003
+```
+
+或启动关键帧版旋转乌鸦项目：
+
+```powershell
+npm run dev:003-keyframes
+```
+
 然后打开终端里显示的本地 Vite 地址，通常是 `http://127.0.0.1:5173/`。
 
 ## 常用命令
@@ -49,9 +69,13 @@ npm run dev:001
 npm run build      # 构建所有项目
 npm run build:001  # 只构建 001-aurora-ribbon
 npm run build:002  # 只构建 002-spin-sphere
+npm run build:003  # 只构建 003-rotating-crow
+npm run build:003-keyframes  # 只构建 003-rotating-crow-keyframes
 npm run test       # 测试所有项目
 npm run test:001   # 只测试 001-aurora-ribbon
 npm run test:002   # 只测试 002-spin-sphere
+npm run test:003   # 只测试 003-rotating-crow
+npm run test:003-keyframes   # 只测试 003-rotating-crow-keyframes
 ```
 
 ## 新项目约定
