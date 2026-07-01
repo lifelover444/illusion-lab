@@ -4,6 +4,7 @@ import {
   projectCrowRow,
   type CrowProjectionRows
 } from './crow';
+import { getCrowStageLayout } from './layout';
 import { getAmbiguousProjection, getEyeOpacity } from './rotation';
 
 const CROW_IMAGE_URL = new URL('../assets/crow.png', import.meta.url).href;
@@ -155,28 +156,6 @@ function drawProjectionMask(mask: ProjectionMask) {
   return projection;
 }
 
-function drawGroundShadow(
-  projection: ReturnType<typeof getAmbiguousProjection>,
-  baseDrawX: number,
-  drawY: number,
-  targetWidth: number,
-  targetHeight: number,
-  sceneWidth: number
-) {
-  const centerX = baseDrawX + targetWidth / 2 + sceneWidth * projection.edgeOffsetRatio * 0.8;
-  const centerY = drawY + targetHeight * 0.92;
-  const radiusX = targetWidth * (0.28 - projection.edgeProjection * 0.045);
-  const radiusY = targetHeight * (0.026 + projection.edgeProjection * 0.004);
-
-  sceneContext.save();
-  sceneContext.filter = `blur(${Math.max(5, targetHeight * 0.014)}px)`;
-  sceneContext.fillStyle = 'rgba(0, 0, 0, 0.14)';
-  sceneContext.beginPath();
-  sceneContext.ellipse(centerX, centerY, radiusX, radiusY, 0, 0, Math.PI * 2);
-  sceneContext.fill();
-  sceneContext.restore();
-}
-
 function drawEye(mask: ProjectionMask, scale: number, drawX: number, drawY: number) {
   const projection = getAmbiguousProjection(elapsedSeconds);
   const opacity = getEyeOpacity(projection.angle, showEye) * 0.62;
@@ -202,6 +181,37 @@ function drawEye(mask: ProjectionMask, scale: number, drawX: number, drawY: numb
   sceneContext.restore();
 }
 
+function drawReflection(
+  mask: ProjectionMask,
+  drawX: number,
+  drawY: number,
+  targetWidth: number,
+  targetHeight: number,
+  reflectionTop: number,
+  reflectionHeight: number
+) {
+  sceneContext.save();
+  sceneContext.beginPath();
+  sceneContext.rect(drawX, reflectionTop, targetWidth, reflectionHeight);
+  sceneContext.clip();
+  sceneContext.translate(0, reflectionTop * 2);
+  sceneContext.scale(1, -1);
+  sceneContext.globalAlpha = 0.18;
+  sceneContext.filter = `blur(${Math.max(0.6, targetHeight * 0.002)}px)`;
+  sceneContext.drawImage(mask.canvas, drawX, drawY, targetWidth, targetHeight);
+  sceneContext.restore();
+
+  sceneContext.save();
+  sceneContext.globalCompositeOperation = 'destination-in';
+  const fade = sceneContext.createLinearGradient(0, reflectionTop, 0, reflectionTop + reflectionHeight);
+  fade.addColorStop(0, 'rgba(0, 0, 0, 0.78)');
+  fade.addColorStop(0.58, 'rgba(0, 0, 0, 0.2)');
+  fade.addColorStop(1, 'rgba(0, 0, 0, 0)');
+  sceneContext.fillStyle = fade;
+  sceneContext.fillRect(drawX, reflectionTop, targetWidth, reflectionHeight);
+  sceneContext.restore();
+}
+
 function render() {
   const width = sceneCanvas.clientWidth;
   const height = sceneCanvas.clientHeight;
@@ -214,25 +224,34 @@ function render() {
 
   const projection = drawProjectionMask(projectionMask);
 
-  const targetHeight = Math.min(height * 0.58, width * 1.16);
-  const scale = targetHeight / projectionMask.canvas.height;
-  const targetWidth = projectionMask.canvas.width * scale;
-  const baseDrawX = (width - targetWidth) / 2;
-  const drawX = baseDrawX + width * projection.edgeOffsetRatio;
-  const drawY = Math.max(64, height * 0.14);
+  const layout = getCrowStageLayout({
+    sceneWidth: width,
+    sceneHeight: height,
+    maskWidth: projectionMask.canvas.width,
+    maskHeight: projectionMask.canvas.height,
+    edgeOffsetRatio: projection.edgeOffsetRatio
+  });
 
-  drawGroundShadow(projection, baseDrawX, drawY, targetWidth, targetHeight, width);
+  drawReflection(
+    projectionMask,
+    layout.drawX,
+    layout.drawY,
+    layout.targetWidth,
+    layout.targetHeight,
+    layout.reflectionTop,
+    layout.reflectionHeight
+  );
 
   sceneContext.save();
   sceneContext.imageSmoothingEnabled = true;
   sceneContext.filter = 'blur(0.35px)';
-  sceneContext.drawImage(projectionMask.canvas, drawX, drawY, targetWidth, targetHeight);
+  sceneContext.drawImage(projectionMask.canvas, layout.drawX, layout.drawY, layout.targetWidth, layout.targetHeight);
   sceneContext.filter = 'none';
   sceneContext.globalAlpha = 0.86;
-  sceneContext.drawImage(projectionMask.canvas, drawX, drawY, targetWidth, targetHeight);
+  sceneContext.drawImage(projectionMask.canvas, layout.drawX, layout.drawY, layout.targetWidth, layout.targetHeight);
   sceneContext.restore();
 
-  drawEye(projectionMask, scale, drawX, drawY);
+  drawEye(projectionMask, layout.scale, layout.drawX, layout.drawY);
 }
 
 function animate(timestamp: number) {

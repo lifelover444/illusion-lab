@@ -4,6 +4,7 @@ import {
   createCrowSilhouette,
   projectCrowRow
 } from '../src/crow';
+import { getCrowStageLayout } from '../src/layout';
 import { LOOP_DURATION, getAmbiguousProjection, getEyeOpacity, getLoopRotation } from '../src/rotation';
 
 function imageDataFromPixels(width: number, height: number, pixels: number[][]) {
@@ -235,5 +236,24 @@ describe('getEyeOpacity', () => {
 
   it('respects the user eye visibility toggle', () => {
     expect(getEyeOpacity(0, false)).toBe(0);
+  });
+});
+
+describe('getCrowStageLayout', () => {
+  it('shrinks and raises the crow to leave room for a lower half-body reflection', () => {
+    const layout = getCrowStageLayout({
+      sceneWidth: 405,
+      sceneHeight: 720,
+      maskWidth: 220,
+      maskHeight: 360,
+      edgeOffsetRatio: 0.015
+    });
+
+    expect(layout.targetHeight).toBeLessThan(720 * 0.56);
+    expect(layout.drawY).toBeLessThan(720 * 0.1);
+    expect(layout.drawX - layout.baseDrawX).toBeCloseTo(405 * 0.015, 6);
+    expect(layout.reflectionTop).toBeGreaterThan(layout.drawY + layout.targetHeight * 0.9);
+    expect(layout.reflectionHeight).toBeCloseTo(layout.targetHeight * 0.42, 6);
+    expect(layout.reflectionBottom).toBeLessThan(720 * 0.8);
   });
 });
