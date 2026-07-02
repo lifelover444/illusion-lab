@@ -8,3 +8,5 @@ npm-debug.log*
 *.mp4
 verify/
 .hyperframes/
+004-wireframe-hourglass-illusion/scene/
+004-wireframe-hourglass-illusion/output/

@@ -1,0 +1,65 @@
+{
+  "name": "wireframe-hourglass-illusion",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 22,
+      "samples": 8,
+      "output": "output/wireframe-hourglass-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 22,
+      "samples": 12,
+      "output": "output/wireframe-hourglass-illusion.mp4"
+    }
+  },
+  "geometry": {
+    "sides": 4,
+    "baseRadius": 1.02,
+    "pyramidHeight": 1.54,
+    "maxApexSeparation": 0.74,
+    "topPhaseDegrees": 45,
+    "bottomPhaseDegrees": 45
+  },
+  "style": {
+    "orthographicScale": 5.45,
+    "lineCoreRadius": 0.0022,
+    "lineGlowRadius": 0.0068,
+    "particleCount": 294,
+    "particleSizeMin": 0.002,
+    "particleSizeMax": 0.0064,
+    "spiralArmCount": 4,
+    "spiralTurns": 1.32,
+    "spiralLocalTurns": 0.86,
+    "spiralJitterRadians": 0.24,
+    "spiralTrailSamples": 38,
+    "spiralTrailRadiusRatio": 0.58,
+    "spiralTrailLineRadius": 0.0012,
+    "spiralTrailLocalTurns": -0.42,
+    "bridgeParticleCount": 88,
+    "bridgeSegmentCount": 30,
+    "bridgeRadius": 0.058,
+    "bridgeLineRadius": 0.0012,
+    "bridgeMinLength": 0.055,
+    "bridgeTwistTurns": 2.35,
+    "bridgeLocalTurns": 1.18,
+    "pulseRingCount": 3,
+    "pulseRingRadius": 0.105,
+    "pulseRingSamples": 64,
+    "pulseRingLineRadius": 0.00125,
+    "pulseMinStrength": 0.12,
+    "pulseMaxStrength": 1.8,
+    "pulseLocalTurns": 0.35,
+    "rotationCycleSeconds": 11,
+    "cameraDistance": 8.05,
+    "cameraAzimuthDegrees": -63.4,
+    "cameraElevationDegrees": 17,
+    "cameraTargetZ": 0,
+    "seed": 20260702
+  }
+}
