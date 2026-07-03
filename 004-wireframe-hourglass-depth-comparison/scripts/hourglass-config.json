@@ -1,0 +1,109 @@
+{
+  "name": "wireframe-hourglass-depth-comparison",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 22,
+      "samples": 8,
+      "output": "output/wireframe-hourglass-depth-comparison-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 22,
+      "samples": 12,
+      "output": "output/wireframe-hourglass-depth-comparison.mp4"
+    }
+  },
+  "layout": {
+    "leftXOffset": -1.16,
+    "centerXOffset": 0,
+    "rightXOffset": 1.16,
+    "groupScale": 0.52
+  },
+  "controls": [
+    {
+      "id": "left-clockwise-depth-control",
+      "xOffset": -1.16,
+      "perceivedDirection": "clockwise",
+      "rotationSign": 1,
+      "depthInterpretationSign": 1
+    },
+    {
+      "id": "right-counterclockwise-depth-control",
+      "xOffset": 1.16,
+      "perceivedDirection": "counterclockwise",
+      "rotationSign": 1,
+      "depthInterpretationSign": -1
+    }
+  ],
+  "geometry": {
+    "sides": 4,
+    "baseRadius": 1.02,
+    "pyramidHeight": 1.54,
+    "maxApexSeparation": 0.74,
+    "topPhaseDegrees": 45,
+    "bottomPhaseDegrees": 45
+  },
+  "style": {
+    "cameraProjection": "orthographic",
+    "orthographicScale": 5.85,
+    "controlSolidRead": "convex-teaching-aid",
+    "controlPaletteMode": "single-hue-shaded",
+    "controlFaceHueVarianceMax": 0.04,
+    "controlCapBrightnessFloor": 0.96,
+    "controlSurfaceMaterial": "lit-matte",
+    "controlAmbientOcclusion": true,
+    "controlDepthShadingStrength": 0.38,
+    "controlNearEdgeStrength": 0.86,
+    "controlFarEdgeStrength": 0.12,
+    "controlFrontEdgeStrength": 0.92,
+    "controlBackEdgeStrength": 0.08,
+    "controlFrontEdgeRadius": 0.006,
+    "controlBackEdgeRadius": 0.0014,
+    "controlVertexMarkers": false,
+    "controlThroatMarkers": "none",
+    "controlFaceRoughness": 0.68,
+    "controlSurfaceBaseGlow": 0.024,
+    "controlCapBaseGlow": 0.34,
+    "controlKeyLightEnergy": 760,
+    "controlFillLightEnergy": 260,
+    "controlEdgeRadius": 0.0032,
+    "lineCoreRadius": 0.0022,
+    "lineGlowRadius": 0.0068,
+    "particleCount": 294,
+    "particleSizeMin": 0.002,
+    "particleSizeMax": 0.0064,
+    "spiralArmCount": 4,
+    "spiralTurns": 1.32,
+    "spiralLocalTurns": 0.86,
+    "spiralJitterRadians": 0.24,
+    "spiralTrailSamples": 38,
+    "spiralTrailRadiusRatio": 0.58,
+    "spiralTrailLineRadius": 0.0012,
+    "spiralTrailLocalTurns": -0.42,
+    "bridgeParticleCount": 88,
+    "bridgeSegmentCount": 30,
+    "bridgeRadius": 0.058,
+    "bridgeLineRadius": 0.0012,
+    "bridgeMinLength": 0.055,
+    "bridgeTwistTurns": 2.35,
+    "bridgeLocalTurns": 1.18,
+    "pulseRingCount": 3,
+    "pulseRingRadius": 0.105,
+    "pulseRingSamples": 64,
+    "pulseRingLineRadius": 0.00125,
+    "pulseMinStrength": 0.12,
+    "pulseMaxStrength": 1.8,
+    "pulseLocalTurns": 0.35,
+    "rotationCycleSeconds": 11,
+    "cameraDistance": 8.05,
+    "cameraAzimuthDegrees": -63.4,
+    "cameraElevationDegrees": 17,
+    "cameraTargetZ": 0,
+    "seed": 20260702
+  }
+}

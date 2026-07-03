@@ -1,0 +1,135 @@
+<style>
+  .shape-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .shape-card {
+    min-height: 360px;
+  }
+  .shape-preview {
+    height: 210px;
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(110, 220, 255, 0.18), transparent 42%),
+      linear-gradient(145deg, #111827, #030712);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .shape-preview svg {
+    width: 92%;
+    height: 92%;
+    overflow: visible;
+  }
+  .shape-title {
+    margin: 0 0 6px;
+  }
+  .shape-note {
+    margin: 0;
+    color: #5f6778;
+    line-height: 1.45;
+  }
+  .fit-tag {
+    display: inline-flex;
+    margin: 8px 6px 0 0;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: #24324a;
+    background: #e8f0ff;
+  }
+  @media (max-width: 820px) {
+    .shape-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<h2>这次错觉模型的立体图形候选</h2>
+<p class="subtitle">目标是找一个比立方体更有记忆点，同时适合做“深度暧昧 / 旋转方向可反转”的线框或半透明模型。可以先凭直觉点选你最想看的方向。</p>
+
+<div class="cards shape-grid">
+  <div class="card shape-card" data-choice="twisted-antiprism" onclick="toggleSelect(this)">
+    <div class="card-image shape-preview">
+      <svg viewBox="0 0 240 200" aria-label="twisted triangular antiprism sketch">
+        <defs>
+          <filter id="glowA"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowA)">
+          <polygon points="120,22 52,80 188,80" stroke="#67e8f9" stroke-width="3"/>
+          <polygon points="120,178 188,120 52,120" stroke="#f0abfc" stroke-width="3"/>
+          <path d="M120 22 L188 120 M188 80 L120 178 M52 80 L52 120 M120 22 L52 120 M52 80 L120 178 M188 80 L188 120" stroke="#ffffff" stroke-width="2.1" opacity=".86"/>
+          <path d="M120 22 C155 72 152 126 120 178" stroke="#fde68a" stroke-width="1.8" opacity=".7"/>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3 class="shape-title">A. 扭转三角反棱柱</h3>
+      <p class="shape-note">两个三角形端面错开旋转，中间用斜边连接。结构不复杂，但前后三角形很容易互换，适合做强双稳态旋转。</p>
+      <span class="fit-tag">推荐度高</span><span class="fit-tag">歧义强</span><span class="fit-tag">可控</span>
+    </div>
+  </div>
+
+  <div class="card shape-card" data-choice="stellated-dodecahedron" onclick="toggleSelect(this)">
+    <div class="card-image shape-preview">
+      <svg viewBox="0 0 240 200" aria-label="stellated dodecahedron sketch">
+        <defs>
+          <filter id="glowB"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowB)">
+          <polygon points="120,16 143,76 208,68 156,108 176,170 120,134 64,170 84,108 32,68 97,76" stroke="#ffffff" stroke-width="2.3"/>
+          <path d="M120 16 L120 134 M32 68 L156 108 M208 68 L84 108 M64 170 L143 76 M176 170 L97 76" stroke="#67e8f9" stroke-width="2.1"/>
+          <path d="M97 76 L143 76 L156 108 L120 134 L84 108 Z" stroke="#f0abfc" stroke-width="2"/>
+          <circle cx="120" cy="100" r="55" stroke="#fde68a" stroke-width="1.4" opacity=".45"/>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3 class="shape-title">B. 星形十二面体</h3>
+      <p class="shape-note">像结晶星体，视觉冲击最强。缺点是线太多，可能更像复杂装饰，旋转方向反转感会被细节分散。</p>
+      <span class="fit-tag">抢眼</span><span class="fit-tag">复杂</span><span class="fit-tag">需简化</span>
+    </div>
+  </div>
+
+  <div class="card shape-card" data-choice="trefoil-cage" onclick="toggleSelect(this)">
+    <div class="card-image shape-preview">
+      <svg viewBox="0 0 240 200" aria-label="trefoil cage sketch">
+        <defs>
+          <filter id="glowC"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowC)">
+          <path d="M64 126 C30 68 92 38 130 75 C164 108 119 154 82 139 C42 123 58 72 120 66 C188 59 209 124 160 151 C119 174 78 153 64 126 Z" stroke="#ffffff" stroke-width="8" opacity=".92"/>
+          <path d="M64 126 C30 68 92 38 130 75 C164 108 119 154 82 139 C42 123 58 72 120 66 C188 59 209 124 160 151 C119 174 78 153 64 126 Z" stroke="#67e8f9" stroke-width="2.5"/>
+          <path d="M80 58 L158 150 M184 90 L63 132 M118 66 L118 160" stroke="#f0abfc" stroke-width="1.6" opacity=".7"/>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3 class="shape-title">C. 三叶结笼</h3>
+      <p class="shape-note">像打结的空间环，造型新鲜。适合偏有机、流动的错觉，但需要小心处理遮挡，否则真实深度线索太强。</p>
+      <span class="fit-tag">有机</span><span class="fit-tag">新奇</span><span class="fit-tag">难度较高</span>
+    </div>
+  </div>
+
+  <div class="card shape-card" data-choice="gyrobipyramid" onclick="toggleSelect(this)">
+    <div class="card-image shape-preview">
+      <svg viewBox="0 0 240 200" aria-label="gyrobipyramid sketch">
+        <defs>
+          <filter id="glowD"><feGaussianBlur stdDeviation="2.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowD)">
+          <polygon points="120,18 176,62 162,132 78,132 64,62" stroke="#67e8f9" stroke-width="3"/>
+          <polygon points="120,182 176,138 162,68 78,68 64,138" stroke="#f0abfc" stroke-width="3"/>
+          <path d="M120 18 L120 182 M176 62 L176 138 M162 132 L162 68 M78 132 L78 68 M64 62 L64 138" stroke="#ffffff" stroke-width="2"/>
+          <path d="M120 18 L162 68 L176 138 L120 182 L78 132 L64 62 Z" stroke="#fde68a" stroke-width="1.7" opacity=".7"/>
+        </g>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3 class="shape-title">D. 扭转双五棱锥</h3>
+      <p class="shape-note">比 004 的双四棱锥更丰富，仍然保留上下尖顶和环状腰线。容易做成“张开 / 闭合 / 翻转”的机械花效果。</p>
+      <span class="fit-tag">延续 004</span><span class="fit-tag">仪式感</span><span class="fit-tag">中等复杂</span>
+    </div>
+  </div>
+</div>

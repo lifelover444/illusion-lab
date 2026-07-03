@@ -8,7 +8,8 @@
     "002-spin-sphere",
     "003-rotating-crow",
     "003-rotating-crow-keyframes",
-    "004-wireframe-hourglass-illusion"
+    "004-wireframe-hourglass-illusion",
+    "004-wireframe-hourglass-depth-comparison"
   ],
   "scripts": {
     "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
@@ -22,18 +23,23 @@
     "build:003": "npm run build --workspace @illusion-lab/rotating-crow",
     "build:003-keyframes": "npm run build --workspace @illusion-lab/rotating-crow-keyframes",
     "build:004": "npm run build --workspace @illusion-lab/wireframe-hourglass-illusion",
+    "build:004-comparison": "npm run build --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
     "test": "npm run test --workspaces",
     "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
     "test:002": "npm run test --workspace @illusion-lab/spin-sphere",
     "test:003": "npm run test --workspace @illusion-lab/rotating-crow",
     "test:003-keyframes": "npm run test --workspace @illusion-lab/rotating-crow-keyframes",
     "test:004": "npm run test --workspace @illusion-lab/wireframe-hourglass-illusion",
+    "test:004-comparison": "npm run test --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
     "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon",
     "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere",
     "preview:003": "npm run preview --workspace @illusion-lab/rotating-crow",
     "preview:003-keyframes": "npm run preview --workspace @illusion-lab/rotating-crow-keyframes",
     "scene:004": "npm run scene --workspace @illusion-lab/wireframe-hourglass-illusion",
     "render:004:preview": "npm run render:preview --workspace @illusion-lab/wireframe-hourglass-illusion",
-    "render:004:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-illusion"
+    "render:004:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-illusion",
+    "scene:004-comparison": "npm run scene --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
+    "render:004-comparison:preview": "npm run render:preview --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
+    "render:004-comparison:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-depth-comparison"
   }
 }

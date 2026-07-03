@@ -10,3 +10,5 @@ verify/
 .hyperframes/
 004-wireframe-hourglass-illusion/scene/
 004-wireframe-hourglass-illusion/output/
+004-wireframe-hourglass-depth-comparison/scene/
+004-wireframe-hourglass-depth-comparison/output/
