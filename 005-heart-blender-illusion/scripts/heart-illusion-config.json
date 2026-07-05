@@ -1,0 +1,65 @@
+{
+  "name": "heart-blender-illusion",
+  "status": "modeling-started",
+  "subject": "mobius-heart-ring",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 12,
+      "output": "output/heart-mobius-illusion-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 12,
+      "output": "output/heart-mobius-illusion.mp4"
+    }
+  },
+  "geometry": {
+    "sampleCount": 240,
+    "heartScale": 0.145,
+    "verticalScale": 0.92,
+    "bandWidthRatio": 0.13,
+    "depthWidthRatio": 0.07,
+    "mobiusTwistDegrees": 180,
+    "edgeRadius": 0.018
+  },
+  "material": {
+    "surfaceColor": [1.0, 0.18, 0.56],
+    "edgeColor": [1.0, 0.72, 0.92],
+    "surfaceAlpha": 0.28,
+    "surfaceEmissionStrength": 1.4,
+    "edgeEmissionStrength": 4.2,
+    "backgroundColor": [0.005, 0.004, 0.008],
+    "bloomIntensity": 0.08,
+    "bloomRadius": 6.5
+  },
+  "motion": {
+    "rotationCycleSeconds": 6,
+    "totalSeconds": 12,
+    "easing": "linear",
+    "axis": "vertical"
+  },
+  "camera": {
+    "projection": "orthographic",
+    "orthoScale": 5.8,
+    "location": [0, -7.2, 0.18],
+    "lookAt": [0, 0, 0.12],
+    "avoidPerspectiveDepthCue": true
+  },
+  "modelingNotes": {
+    "preferredFirstPass": "glowing semi-transparent Mobius ribbon following a heart-shaped centerline",
+    "avoid": [
+      "pure silhouette",
+      "solid crystal heart",
+      "perspective camera",
+      "cast shadow",
+      "asymmetric texture",
+      "glass refraction",
+      "one-sided highlight"
+    ]
+  }
+}
