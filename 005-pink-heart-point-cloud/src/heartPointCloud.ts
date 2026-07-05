@@ -64,11 +64,11 @@ const validateConfig = (config: HeartPointCloudConfig): void => {
   assertPositiveFinite('width', config.width);
   assertPositiveFinite('height', config.height);
   assertPositiveFinite('depth', config.depth);
-  assertPositiveFinite('point size minimum', config.pointSizeMin);
-  assertPositiveFinite('point size maximum', config.pointSizeMax);
+  assertPositiveFinite('pointSizeMin', config.pointSizeMin);
+  assertPositiveFinite('pointSizeMax', config.pointSizeMax);
 
   if (config.pointSizeMin > config.pointSizeMax) {
-    throw new Error('point size minimum must be less than or equal to point size maximum.');
+    throw new Error('pointSizeMin must be less than or equal to pointSizeMax.');
   }
 };
 

@@ -79,9 +79,17 @@ describe('heart point cloud generation', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, width: 0 })).toThrow(/width/i);
   });
 
+  it('rejects a non-positive pointSizeMin with the config field name', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMin: 0 })).toThrow(/pointSizeMin/);
+  });
+
+  it('rejects a non-positive pointSizeMax with the config field name', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMax: 0 })).toThrow(/pointSizeMax/);
+  });
+
   it('rejects an inverted point size range', () => {
     expect(() =>
       createHeartPointCloud({ ...baseConfig, pointSizeMin: 0.05, pointSizeMax: 0.01 })
-    ).toThrow(/point size/i);
+    ).toThrow(/pointSizeMin.*pointSizeMax|pointSizeMax.*pointSizeMin/);
   });
 });
