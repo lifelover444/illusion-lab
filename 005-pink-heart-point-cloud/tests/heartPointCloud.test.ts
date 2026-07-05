@@ -5,6 +5,7 @@ import {
   isInsideHeart,
   type HeartPointCloudConfig
 } from '../src/heartPointCloud';
+import config from '../scripts/heart-config.json';
 
 const baseConfig: HeartPointCloudConfig = {
   count: 640,
@@ -16,6 +17,26 @@ const baseConfig: HeartPointCloudConfig = {
   pointSizeMin: 0.018,
   pointSizeMax: 0.038
 };
+
+describe('render config', () => {
+  it('uses a 9:16 final render profile', () => {
+    expect(config.profiles.final.width / config.profiles.final.height).toBe(9 / 16);
+  });
+
+  it('uses the target final timing and two rotation cycles', () => {
+    expect(config.profiles.final.fps).toBe(30);
+    expect(config.profiles.final.seconds).toBe(12);
+    expect(config.style.rotationCycleSeconds).toBe(6);
+    expect(config.profiles.final.seconds / config.style.rotationCycleSeconds).toBe(2);
+  });
+
+  it('keeps the point cloud sparse, shallow, and unshadowed', () => {
+    expect(config.geometry.count).toBeGreaterThanOrEqual(500);
+    expect(config.geometry.count).toBeLessThanOrEqual(900);
+    expect(config.geometry.depth).toBeLessThanOrEqual(0.5);
+    expect(config.style.shadowOpacity).toBe(0);
+  });
+});
 
 describe('heart point cloud generation', () => {
   it('generates the configured number of points inside the heart silhouette', () => {

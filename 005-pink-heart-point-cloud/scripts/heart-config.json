@@ -1,0 +1,43 @@
+{
+  "name": "pink-heart-point-cloud",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 12,
+      "samples": 8,
+      "output": "output/pink-heart-point-cloud-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 12,
+      "samples": 16,
+      "output": "output/pink-heart-point-cloud.mp4"
+    }
+  },
+  "geometry": {
+    "count": 640,
+    "seed": 20260705,
+    "width": 3.0,
+    "height": 2.72,
+    "depth": 0.42,
+    "lobeLift": 0.1,
+    "pointSizeMin": 0.018,
+    "pointSizeMax": 0.038
+  },
+  "style": {
+    "rotationCycleSeconds": 6,
+    "orthographicScale": 4.5,
+    "cameraDistance": 8.0,
+    "cameraTargetZ": 0,
+    "backgroundColor": [1.0, 0.955, 0.975],
+    "heartColor": [1.0, 0.25, 0.58],
+    "heartCoreColor": [1.0, 0.62, 0.78],
+    "emissionStrength": 1.2,
+    "shadowOpacity": 0,
+    "worldStrength": 0.78
+  }
+}
