@@ -75,6 +75,10 @@ describe('heart point cloud generation', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, count: 0 })).toThrow(/count/i);
   });
 
+  it('rejects a fractional point count', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, count: 1.5 })).toThrow(/count/i);
+  });
+
   it('rejects a non-finite seed', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, seed: Number.NaN })).toThrow(/seed/i);
   });
@@ -87,6 +91,26 @@ describe('heart point cloud generation', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, width: 0 })).toThrow(/width/i);
   });
 
+  it('rejects a non-finite width', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, width: Number.POSITIVE_INFINITY })).toThrow(/width/i);
+  });
+
+  it('rejects a non-positive height', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, height: 0 })).toThrow(/height/i);
+  });
+
+  it('rejects a non-finite height', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, height: Number.NaN })).toThrow(/height/i);
+  });
+
+  it('rejects a non-positive depth', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, depth: 0 })).toThrow(/depth/i);
+  });
+
+  it('rejects a non-finite depth', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, depth: Number.NEGATIVE_INFINITY })).toThrow(/depth/i);
+  });
+
   it('rejects a non-finite lobeLift', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, lobeLift: Number.NaN })).toThrow(/lobeLift/i);
   });
@@ -95,8 +119,18 @@ describe('heart point cloud generation', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMin: 0 })).toThrow(/pointSizeMin/);
   });
 
+  it('rejects a non-finite pointSizeMin with the config field name', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMin: Number.NaN })).toThrow(/pointSizeMin/);
+  });
+
   it('rejects a non-positive pointSizeMax with the config field name', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMax: 0 })).toThrow(/pointSizeMax/);
+  });
+
+  it('rejects a non-finite pointSizeMax with the config field name', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, pointSizeMax: Number.POSITIVE_INFINITY })).toThrow(
+      /pointSizeMax/
+    );
   });
 
   it('rejects an inverted point size range', () => {
