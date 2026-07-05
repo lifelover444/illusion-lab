@@ -75,8 +75,20 @@ describe('heart point cloud generation', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, count: 0 })).toThrow(/count/i);
   });
 
+  it('rejects a non-finite seed', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, seed: Number.NaN })).toThrow(/seed/i);
+  });
+
+  it('rejects a fractional seed', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, seed: 1.5 })).toThrow(/seed/i);
+  });
+
   it('rejects a non-positive width', () => {
     expect(() => createHeartPointCloud({ ...baseConfig, width: 0 })).toThrow(/width/i);
+  });
+
+  it('rejects a non-finite lobeLift', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, lobeLift: Number.NaN })).toThrow(/lobeLift/i);
   });
 
   it('rejects a non-positive pointSizeMin with the config field name', () => {

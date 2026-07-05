@@ -61,9 +61,18 @@ const validateConfig = (config: HeartPointCloudConfig): void => {
     throw new Error('count must be a positive integer.');
   }
 
+  if (!Number.isFinite(config.seed) || !Number.isInteger(config.seed)) {
+    throw new Error('seed must be a finite integer.');
+  }
+
   assertPositiveFinite('width', config.width);
   assertPositiveFinite('height', config.height);
   assertPositiveFinite('depth', config.depth);
+
+  if (!Number.isFinite(config.lobeLift)) {
+    throw new Error('lobeLift must be a finite number.');
+  }
+
   assertPositiveFinite('pointSizeMin', config.pointSizeMin);
   assertPositiveFinite('pointSizeMax', config.pointSizeMax);
 
