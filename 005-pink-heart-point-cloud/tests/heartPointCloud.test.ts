@@ -38,6 +38,13 @@ describe('heart point cloud generation', () => {
     expect(second.points.slice(0, 12)).toEqual(first.points.slice(0, 12));
   });
 
+  it('changes point placement for a different seed', () => {
+    const first = createHeartPointCloud(baseConfig);
+    const second = createHeartPointCloud({ ...baseConfig, seed: baseConfig.seed + 1 });
+
+    expect(second.points.slice(0, 12)).not.toEqual(first.points.slice(0, 12));
+  });
+
   it('keeps depth shallow and centered around the rotation axis', () => {
     const cloud = createHeartPointCloud(baseConfig);
     const bounds = getPointCloudBounds(cloud.points);
@@ -62,5 +69,19 @@ describe('heart point cloud generation', () => {
     expect(isInsideHeart(0, 0.72)).toBe(true);
     expect(isInsideHeart(1.32, 0.9)).toBe(false);
     expect(isInsideHeart(0, -1.18)).toBe(false);
+  });
+
+  it('rejects a non-positive point count', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, count: 0 })).toThrow(/count/i);
+  });
+
+  it('rejects a non-positive width', () => {
+    expect(() => createHeartPointCloud({ ...baseConfig, width: 0 })).toThrow(/width/i);
+  });
+
+  it('rejects an inverted point size range', () => {
+    expect(() =>
+      createHeartPointCloud({ ...baseConfig, pointSizeMin: 0.05, pointSizeMax: 0.01 })
+    ).toThrow(/point size/i);
   });
 });

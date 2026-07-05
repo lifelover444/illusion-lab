@@ -50,12 +50,36 @@ const mulberry32 = (seed: number): (() => number) => {
 const randomBetween = (random: () => number, min: number, max: number): number =>
   min + (max - min) * random();
 
+const assertPositiveFinite = (fieldName: string, value: number): void => {
+  if (!Number.isFinite(value) || value <= 0) {
+    throw new Error(`${fieldName} must be a positive finite number.`);
+  }
+};
+
+const validateConfig = (config: HeartPointCloudConfig): void => {
+  if (!Number.isInteger(config.count) || config.count <= 0) {
+    throw new Error('count must be a positive integer.');
+  }
+
+  assertPositiveFinite('width', config.width);
+  assertPositiveFinite('height', config.height);
+  assertPositiveFinite('depth', config.depth);
+  assertPositiveFinite('point size minimum', config.pointSizeMin);
+  assertPositiveFinite('point size maximum', config.pointSizeMax);
+
+  if (config.pointSizeMin > config.pointSizeMax) {
+    throw new Error('point size minimum must be less than or equal to point size maximum.');
+  }
+};
+
 export const isInsideHeart = (x: number, y: number): boolean => {
   const value = (x * x + y * y - 1) ** 3 - x * x * y ** 3;
   return value <= 0;
 };
 
 export const createHeartPointCloud = (config: HeartPointCloudConfig): HeartPointCloud => {
+  validateConfig(config);
+
   const random = mulberry32(config.seed);
   const points: HeartPoint[] = [];
   let attempts = 0;
