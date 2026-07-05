@@ -1,0 +1,78 @@
+{
+  "name": "wireframe-double-saddle-depth-illusion",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 24,
+      "samples": 8,
+      "output": "output/wireframe-double-saddle-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 24,
+      "samples": 12,
+      "output": "output/wireframe-double-saddle-depth-illusion.mp4"
+    }
+  },
+  "geometry": {
+    "gridSize": 9,
+    "span": 2.72,
+    "saddleHeight": 0.58,
+    "crossBraceInterval": 2
+  },
+  "style": {
+    "visualMode": "particle-surface",
+    "colorMode": "neutral-noise",
+    "cameraProjection": "ORTHO",
+    "showBackEdges": true,
+    "orthographicScale": 7.4,
+    "lineCoreRadius": 0.00145,
+    "lineGlowRadius": 0.0042,
+    "ridgeCoreRadius": 0.0026,
+    "ridgeGlowRadius": 0.0092,
+    "outlineCoreRadius": 0.0022,
+    "outlineGlowRadius": 0.0088,
+    "gridGuideAlpha": 0.04,
+    "edgePulseStrength": 1.05,
+    "particleCount": 9000,
+    "particleLayerCount": 6,
+    "particleSizeMin": 0.0016,
+    "particleSizeMax": 0.0048,
+    "particleJitter": 0.024,
+    "edgeParticleBoost": 0.38,
+    "outlineSampleCount": 220,
+    "ridgeCurveCount": 0,
+    "ridgeSampleCount": 180,
+    "centerPulseAlpha": 0,
+    "rotationCycleSeconds": 12,
+    "rockDegrees": 0,
+    "cameraDistance": 7.6,
+    "cameraAzimuthDegrees": -46,
+    "cameraElevationDegrees": -8,
+    "cameraTargetZ": 0,
+    "seed": 20260705
+  },
+  "composition": {
+    "sharedRotationRig": true,
+    "modelInstances": [
+      {
+        "name": "lower-saddle",
+        "zOffset": -0.92,
+        "rotationXDegrees": 0,
+        "rotationZDegrees": 0,
+        "seedOffset": 0
+      },
+      {
+        "name": "upper-inverted-saddle",
+        "zOffset": 0.92,
+        "rotationXDegrees": 0,
+        "rotationZDegrees": 90,
+        "seedOffset": 100000
+      }
+    ]
+  }
+}
