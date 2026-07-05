@@ -89,7 +89,7 @@ describe('005 heart Mobius Blender illusion contract', () => {
 Run:
 
 ```powershell
-npm run test:005 -- --runInBand
+npm run test:005
 ```
 
 Expected: FAIL because `subject` is still `heart`, `status` is still `planning-only`, and the new config fields do not exist.
