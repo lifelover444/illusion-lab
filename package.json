@@ -9,7 +9,8 @@
     "003-rotating-crow",
     "003-rotating-crow-keyframes",
     "004-wireframe-hourglass-illusion",
-    "004-wireframe-hourglass-depth-comparison"
+    "004-wireframe-hourglass-depth-comparison",
+    "005-pink-heart-point-cloud"
   ],
   "scripts": {
     "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
@@ -24,6 +25,7 @@
     "build:003-keyframes": "npm run build --workspace @illusion-lab/rotating-crow-keyframes",
     "build:004": "npm run build --workspace @illusion-lab/wireframe-hourglass-illusion",
     "build:004-comparison": "npm run build --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
+    "build:005": "npm run build --workspace @illusion-lab/pink-heart-point-cloud",
     "test": "npm run test --workspaces",
     "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
     "test:002": "npm run test --workspace @illusion-lab/spin-sphere",
@@ -31,6 +33,7 @@
     "test:003-keyframes": "npm run test --workspace @illusion-lab/rotating-crow-keyframes",
     "test:004": "npm run test --workspace @illusion-lab/wireframe-hourglass-illusion",
     "test:004-comparison": "npm run test --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
+    "test:005": "npm run test --workspace @illusion-lab/pink-heart-point-cloud",
     "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon",
     "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere",
     "preview:003": "npm run preview --workspace @illusion-lab/rotating-crow",
@@ -40,6 +43,9 @@
     "render:004:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-illusion",
     "scene:004-comparison": "npm run scene --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
     "render:004-comparison:preview": "npm run render:preview --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
-    "render:004-comparison:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-depth-comparison"
+    "render:004-comparison:final": "npm run render:final --workspace @illusion-lab/wireframe-hourglass-depth-comparison",
+    "scene:005": "npm run scene --workspace @illusion-lab/pink-heart-point-cloud",
+    "render:005:preview": "npm run render:preview --workspace @illusion-lab/pink-heart-point-cloud",
+    "render:005:final": "npm run render:final --workspace @illusion-lab/pink-heart-point-cloud"
   }
 }
