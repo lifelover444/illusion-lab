@@ -28,6 +28,8 @@ await mkdir(dirname(outputBlend), { recursive: true });
 
 const args = [
   '--background',
+  '--python-exit-code',
+  '1',
   '--python',
   scriptPath,
   '--',
@@ -41,7 +43,13 @@ const args = [
 
 const child = spawn(blenderBin, args, {
   cwd: projectRoot,
-  stdio: 'inherit'
+  stdio: 'inherit',
+  env: {
+    ...process.env,
+    HEART_ILLUSION_MODE: mode,
+    HEART_ILLUSION_CONFIG: configPath,
+    HEART_ILLUSION_BLEND: outputBlend
+  }
 });
 
 child.on('error', (error) => {

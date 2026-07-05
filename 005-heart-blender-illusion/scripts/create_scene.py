@@ -1,6 +1,8 @@
 import argparse
 import json
 import math
+import os
+import sys
 from pathlib import Path
 
 import bpy
@@ -12,7 +14,23 @@ def parse_args():
     parser.add_argument("--mode", choices=["scene", "preview", "final"], required=True)
     parser.add_argument("--config", required=True)
     parser.add_argument("--blend", required=True)
-    return parser.parse_args()
+
+    if "--" in sys.argv:
+        script_args = sys.argv[sys.argv.index("--") + 1:]
+    else:
+        script_args = []
+
+    if not script_args and os.environ.get("HEART_ILLUSION_MODE"):
+        script_args = [
+            "--mode",
+            os.environ["HEART_ILLUSION_MODE"],
+            "--config",
+            os.environ["HEART_ILLUSION_CONFIG"],
+            "--blend",
+            os.environ["HEART_ILLUSION_BLEND"],
+        ]
+
+    return parser.parse_args(script_args)
 
 
 def require_positive(config, path):
