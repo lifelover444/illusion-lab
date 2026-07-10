@@ -12,7 +12,8 @@
     "004-wireframe-hourglass-depth-comparison",
     "005-heart-blender-illusion",
     "006-wireframe-saddle-depth-illusion",
-    "007-wireframe-double-saddle-depth-illusion"
+    "007-wireframe-double-saddle-depth-illusion",
+    "008-wireframe-hyperboloid-depth-rotation-illusion"
   ],
   "scripts": {
     "dev": "npm run dev --workspace @illusion-lab/aurora-ribbon",
@@ -30,6 +31,7 @@
     "build:005": "npm run build --workspace @illusion-lab/heart-blender-illusion",
     "build:006": "npm run build --workspace @illusion-lab/wireframe-saddle-depth-illusion",
     "build:007": "npm run build --workspace @illusion-lab/wireframe-double-saddle-depth-illusion",
+    "build:008": "npm run build --workspace @illusion-lab/wireframe-hyperboloid-depth-rotation-illusion",
     "test": "npm run test --workspaces",
     "test:001": "npm run test --workspace @illusion-lab/aurora-ribbon",
     "test:002": "npm run test --workspace @illusion-lab/spin-sphere",
@@ -40,6 +42,7 @@
     "test:005": "npm run test --workspace @illusion-lab/heart-blender-illusion",
     "test:006": "npm run test --workspace @illusion-lab/wireframe-saddle-depth-illusion",
     "test:007": "npm run test --workspace @illusion-lab/wireframe-double-saddle-depth-illusion",
+    "test:008": "npm run test --workspace @illusion-lab/wireframe-hyperboloid-depth-rotation-illusion",
     "preview:001": "npm run preview --workspace @illusion-lab/aurora-ribbon",
     "preview:002": "npm run preview --workspace @illusion-lab/spin-sphere",
     "preview:003": "npm run preview --workspace @illusion-lab/rotating-crow",
@@ -58,6 +61,9 @@
     "render:006:final": "npm run render:final --workspace @illusion-lab/wireframe-saddle-depth-illusion",
     "scene:007": "npm run scene --workspace @illusion-lab/wireframe-double-saddle-depth-illusion",
     "render:007:preview": "npm run render:preview --workspace @illusion-lab/wireframe-double-saddle-depth-illusion",
-    "render:007:final": "npm run render:final --workspace @illusion-lab/wireframe-double-saddle-depth-illusion"
+    "render:007:final": "npm run render:final --workspace @illusion-lab/wireframe-double-saddle-depth-illusion",
+    "scene:008": "npm run scene --workspace @illusion-lab/wireframe-hyperboloid-depth-rotation-illusion",
+    "render:008:preview": "npm run render:preview --workspace @illusion-lab/wireframe-hyperboloid-depth-rotation-illusion",
+    "render:008:final": "npm run render:final --workspace @illusion-lab/wireframe-hyperboloid-depth-rotation-illusion"
   }
 }

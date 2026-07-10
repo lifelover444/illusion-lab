@@ -1,0 +1,17 @@
+{
+  "name": "@illusion-lab/wireframe-hyperboloid-depth-rotation-illusion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scene": "node scripts/run-blender.mjs scene",
+    "render:preview": "node scripts/run-blender.mjs preview",
+    "render:final": "node scripts/run-blender.mjs final",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}
