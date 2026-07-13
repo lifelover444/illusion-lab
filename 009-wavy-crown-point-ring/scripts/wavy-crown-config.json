@@ -1,0 +1,47 @@
+{
+  "name": "wavy-crown-point-ring",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 9.6,
+      "samples": 8,
+      "output": "output/wavy-crown-point-ring-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 9.6,
+      "samples": 16,
+      "output": "output/wavy-crown-point-ring.mp4"
+    }
+  },
+  "geometry": {
+    "majorSegments": 160,
+    "radialSegments": 34,
+    "seed": 20260712,
+    "majorRadius": 1.0,
+    "bandHalfWidth": 0.28,
+    "bandHalfThickness": 0.025,
+    "waveCount": 4,
+    "waveHeight": 0.09,
+    "wavePhaseDegrees": 45,
+    "pointSizeMin": 0.0045,
+    "pointSizeMax": 0.009
+  },
+  "style": {
+    "rotationCycleSeconds": 4.8,
+    "orthographicScale": 4.8,
+    "cameraDistance": 9.0,
+    "cameraElevationDegrees": 28,
+    "cameraAzimuthDegrees": -90,
+    "cameraTargetZ": 0,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "pointColor": [0.82, 0.91, 1.0],
+    "emissionStrength": 1.15,
+    "glowThreshold": 1.2,
+    "glowSize": 3
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "truncated-cube-depth-rotation-illusion",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 12.0,
+      "samples": 8,
+      "output": "output/truncated-cube-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 24.0,
+      "samples": 16,
+      "output": "output/truncated-cube-depth-rotation-illusion.mp4"
+    }
+  },
+  "geometry": {
+    "seed": 20260712,
+    "edgeLength": 2.0,
+    "cutDepth": 0.28,
+    "largeFacePointCount": 1550,
+    "trianglePointCount": 30,
+    "mainEdgeSlotCount": 48,
+    "mainEdgeKeepRatio": 0.82,
+    "cutEdgePointCount": 9,
+    "edgeTrenchWidth": 0.035,
+    "edgeTrenchDensityReduction": 0.22,
+    "pointSizeMin": 0.0022,
+    "pointSizeMax": 0.0045,
+    "mainEdgePointSizeMin": 0.0025,
+    "mainEdgePointSizeMax": 0.0043,
+    "mainEdgeHaloStride": 5,
+    "mainEdgeHaloSizeMultiplier": 2.3,
+    "cutEdgeStarSizeMultiplier": 1.8,
+    "presentationTiltXDegrees": 0,
+    "presentationTurnZDegrees": 0
+  },
+  "style": {
+    "rotationCycleSeconds": 12.0,
+    "orthographicScale": 5.35,
+    "cameraDistance": 8.0,
+    "cameraElevationDegrees": 10,
+    "cameraAzimuthDegrees": -90,
+    "cameraTargetZ": 0.03,
+    "backgroundColor": [0.0015, 0.0025, 0.005],
+    "pointColor": [0.76, 0.87, 1.0],
+    "emissionStrength": 1.0,
+    "mainEdgeColor": [0.69, 0.76, 1.0],
+    "mainEdgeEmissionStrength": 1.47,
+    "mainEdgeHaloColor": [0.52, 0.61, 1.0],
+    "mainEdgeHaloEmissionStrength": 1.1,
+    "mainEdgeHaloOpacity": 0.28,
+    "cutEdgeColor": [0.74, 0.83, 1.0],
+    "cutEdgeEmissionStrength": 1.05,
+    "cutEdgeStarEmissionStrength": 1.35,
+    "edgeBreathAmount": 0.06,
+    "cutEdgeBreathAmount": 0.03,
+    "edgeBreathCycleSeconds": 6.0,
+    "glowThreshold": 1.25,
+    "glowSize": 3
+  }
+}

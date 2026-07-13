@@ -1,0 +1,49 @@
+{
+  "name": "interlocked-stellar-rings-depth-illusion",
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 9.6,
+      "samples": 8,
+      "output": "output/interlocked-stellar-rings-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 9.6,
+      "samples": 16,
+      "output": "output/interlocked-stellar-rings-depth-illusion.mp4"
+    }
+  },
+  "geometry": {
+    "seed": 20260712,
+    "ringRadius": 1.0,
+    "centerOffset": 0.62,
+    "tubeHalfWidth": 0.068,
+    "tubeHalfThickness": 0.033,
+    "majorSegments": 144,
+    "minorSegments": 16,
+    "pointSizeMin": 0.0038,
+    "pointSizeMax": 0.0074,
+    "presentationTiltXDegrees": 45,
+    "presentationTurnZDegrees": 18,
+    "presentationStandYDegrees": 0
+  },
+  "style": {
+    "rotationCycleSeconds": 4.8,
+    "orthographicScale": 4.8,
+    "cameraDistance": 9.0,
+    "cameraElevationDegrees": 65,
+    "cameraAzimuthDegrees": -90,
+    "cameraRollDegrees": 90,
+    "cameraTargetZ": 0,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "pointColor": [0.82, 0.91, 1.0],
+    "emissionStrength": 1.18,
+    "glowThreshold": 1.2,
+    "glowSize": 3
+  }
+}
