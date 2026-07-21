@@ -1,0 +1,143 @@
+{
+  "renderMode": "depth-independent-contour-tetragonal-trapezohedron",
+  "geometry": {
+    "waistRadius": 1.34,
+    "halfHeight": 1.72,
+    "initialPhaseDegrees": 22.5,
+    "lowerRingTwistDegrees": 45
+  },
+  "style": {
+    "cameraProjection": "ORTHO",
+    "showBackEdges": true,
+    "continuousShell": true,
+    "directionalLighting": false,
+    "independentParticleMotion": true,
+    "particleMotionAxes": ["Z"],
+    "particleAngularMotion": false,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "facePanel": {
+      "enabled": true,
+      "color": [0.025, 0.055, 0.13],
+      "alpha": 0.24,
+      "emissionStrength": 0.35,
+      "renderMethod": "DITHERED",
+      "doubleSided": true,
+      "transparencyOverlap": true,
+      "castShadows": false,
+      "refraction": false,
+      "fresnel": false
+    },
+    "guideLine": {
+      "enabled": true,
+      "color": [0.45, 0.58, 0.90],
+      "maskEmissionStrength": 1.0,
+      "radius": 0.002,
+      "opaque": true,
+      "breathing": false,
+      "directionalWeighting": false,
+      "depthIndependent": true,
+      "panelOcclusion": false,
+      "internalOpacity": 0.10,
+      "outerSilhouetteOpacity": 0.20,
+      "intersectionAccumulation": false,
+      "compositeMethod": "ALPHA_OVER_MAX_MASK"
+    },
+    "edgeFilamentSlotsPerUnit": 24,
+    "edgeFilamentKeepRatio": 0.82,
+    "edgeFilamentSlotJitter": 0.24,
+    "edgeFilamentPointSizeMin": 0.0025,
+    "edgeFilamentPointSizeMax": 0.0043,
+    "edgeFilamentSurfaceOffset": 0.004,
+    "edgeFilamentColor": [0.69, 0.76, 1.0],
+    "edgeFilamentStrength": 1.47,
+    "edgeHaloStride": 5,
+    "edgeHaloSizeMultiplier": 2.3,
+    "edgeHaloColor": [0.52, 0.61, 1.0],
+    "edgeHaloStrength": 1.1,
+    "edgeHaloOpacity": 0.28,
+    "edgeBreathAmount": 0.06,
+    "edgeBreathCycleSeconds": 6,
+    "faceParticleCount": 7600,
+    "faceParticleSizeMin": 0.0022,
+    "faceParticleSizeMax": 0.0045,
+    "faceParticleSizeExponent": 1.0,
+    "faceParticleJitter": 0.0015,
+    "faceParticleEdgeTrenchWidth": 0.035,
+    "faceParticleEdgeTrenchDensityReduction": 0.22,
+    "faceParticlePalette": [
+      [0.76, 0.87, 1.0]
+    ],
+    "faceParticleStrengthMin": 1.0,
+    "faceParticleStrengthMax": 1.0,
+    "axialStarStream": {
+      "count": 64,
+      "motion": "LOCKED",
+      "halfHeight": 0.95,
+      "radius": 0.035,
+      "sizeMin": 0.0013,
+      "sizeMax": 0.0046,
+      "strengthMin": 0.24,
+      "strengthMax": 0.64,
+      "accentCount": 3,
+      "accentStrength": 0.82,
+      "palette": [
+        [0.78, 0.90, 1.0],
+        [0.42, 0.72, 0.94],
+        [0.58, 0.54, 0.92]
+      ]
+    },
+    "galaxyDust": {
+      "count": 280,
+      "layerCount": 8,
+      "radialRadius": 0.62,
+      "verticalHalfHeight": 0.24,
+      "coreExclusionRadius": 0.07,
+      "sizeMin": 0.0012,
+      "sizeMax": 0.0045,
+      "strengthMin": 0.11,
+      "strengthMax": 0.38,
+      "verticalAmplitudeMin": 0.012,
+      "verticalAmplitudeMax": 0.035,
+      "periodSeconds": 12,
+      "palette": [
+        [0.48, 0.62, 0.74],
+        [0.40, 0.66, 0.84],
+        [0.48, 0.48, 0.82],
+        [0.66, 0.46, 0.78]
+      ]
+    },
+    "vertexCrystalSize": 0.0075,
+    "vertexCrystalColor": [0.84, 0.95, 1.0],
+    "vertexCrystalStrength": 1.45,
+    "cameraAzimuthDegrees": -90,
+    "cameraElevationDegrees": 7,
+    "cameraDistance": 8,
+    "cameraTarget": [0.0, 0.0, 0.0],
+    "orthographicScale": 5.25,
+    "glowThreshold": 1.25,
+    "glowSize": 3,
+    "rotationCycleSeconds": 12,
+    "phaseDegrees": [0, 22.5, 45, 67.5, 90, 135, 180, 270, 360],
+    "motionContactFrameCount": 12,
+    "motionContactColumns": 6,
+    "seed": 20260717
+  },
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 24,
+      "samples": 12,
+      "output": "output/wireframe-tetragonal-trapezohedron-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 24,
+      "samples": 24,
+      "output": "output/wireframe-tetragonal-trapezohedron-depth-rotation-illusion.mp4"
+    }
+  }
+}

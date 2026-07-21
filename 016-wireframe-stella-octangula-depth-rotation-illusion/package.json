@@ -1,0 +1,18 @@
+{
+  "name": "@illusion-lab/wireframe-stella-octangula-depth-rotation-illusion",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scene": "node scripts/run-blender.mjs scene",
+    "render:stills": "node scripts/run-blender.mjs stills",
+    "render:preview": "node scripts/run-blender.mjs preview",
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}

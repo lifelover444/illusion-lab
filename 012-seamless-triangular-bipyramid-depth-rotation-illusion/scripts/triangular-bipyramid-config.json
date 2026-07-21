@@ -1,0 +1,75 @@
+{
+  "renderMode": "dichroic-glass",
+  "geometry": {
+    "radius": 1.0,
+    "halfHeight": 1.4142135623730951,
+    "initialPhaseDegrees": 30.0
+  },
+  "material": {
+    "ior": 1.47,
+    "roughness": 0.28,
+    "metallic": 0.0,
+    "specularIorLevel": 0.18,
+    "transmissionWeight": 0.62,
+    "alpha": 0.78,
+    "surfaceRenderMethod": "BLENDED",
+    "colorFieldMode": "object-aurora",
+    "coatWeight": 0.08,
+    "coatRoughness": 0.22,
+    "thinFilmThickness": 320.0,
+    "thinFilmIor": 1.33,
+    "emissionStrength": 0.55,
+    "volumeColor": [0.006, 0.018, 0.065],
+    "volumeDensity": 0.025,
+    "facingColors": [
+      { "position": 0.0, "color": [0.005, 0.018, 0.065, 1.0] },
+      { "position": 0.3, "color": [0.015, 0.14, 0.3, 1.0] },
+      { "position": 0.64, "color": [0.08, 0.025, 0.22, 1.0] },
+      { "position": 1.0, "color": [0.24, 0.018, 0.14, 1.0] }
+    ]
+  },
+  "lighting": {
+    "pairCount": 3,
+    "radius": 4.6,
+    "height": 2.1,
+    "energy": 55.0,
+    "shape": "RECTANGLE",
+    "size": 4.0,
+    "sizeY": 0.5,
+    "colors": [
+      [0.46, 0.78, 1.0],
+      [0.64, 0.48, 1.0],
+      [1.0, 0.42, 0.68]
+    ]
+  },
+  "style": {
+    "backgroundColor": [0.0008, 0.002, 0.009],
+    "cameraAzimuthDegrees": -90.0,
+    "cameraElevationDegrees": 0.0,
+    "cameraDistance": 8.0,
+    "cameraTarget": [0.0, 0.0, 0.0],
+    "orthographicScale": 4.35,
+    "glowThreshold": 1.05,
+    "glowSize": 5,
+    "rotationCycleSeconds": 5.4,
+    "phaseDegrees": [0, 30, 60, 90, 120, 180, 240, 300, 360]
+  },
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 10.8,
+      "samples": 32,
+      "output": "output/seamless-triangular-bipyramid-depth-rotation-illusion-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 10.8,
+      "samples": 64,
+      "output": "output/seamless-triangular-bipyramid-depth-rotation-illusion-final.mp4"
+    }
+  }
+}

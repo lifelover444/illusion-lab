@@ -1,0 +1,113 @@
+{
+  "renderMode": "particle-surface-object-space-spectral-gradient-stella-octangula",
+  "geometry": {
+    "cubeHalfExtent": 1.0,
+    "initialPhaseDegrees": 0
+  },
+  "style": {
+    "cameraProjection": "ORTHO",
+    "showBackEdges": true,
+    "sameMaterialForBothTetrahedra": true,
+    "continuousIntersectionEdges": true,
+    "overUnderCues": false,
+    "largeFacePanels": false,
+    "edgeCurves": false,
+    "particleSurface": true,
+    "solidNonconvexShell": false,
+    "directionalLighting": false,
+    "depthColorGradient": false,
+    "independentParticleMotion": false,
+    "vertexAccents": false,
+    "intersectionAccents": false,
+    "interiorDustCount": 0,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "edgeParticleCount": 960,
+    "edgeParticleSlotsPerEdge": 96,
+    "edgeParticleStrength": 1.05,
+    "edgeParticleSizeMin": 0.0034,
+    "edgeParticleSizeMax": 0.0063,
+    "edgeHaloStride": 5,
+    "edgeHaloSizeMultiplier": 2.3,
+    "edgeHaloInheritsParticleColor": true,
+    "edgeHaloStrength": 0.65,
+    "edgeHaloOpacity": 0.16,
+    "spectralGradient": {
+      "mode": "OBJECT_SPACE_LINEAR_CYCLIC",
+      "direction": [0.61, -0.37, 0.70],
+      "cyclesAcrossObject": 1.35,
+      "phase": 0.06,
+      "bandCount": 24,
+      "sameFieldForAllParticles": true,
+      "cameraDriven": false,
+      "depthDriven": false,
+      "animated": false,
+      "styles": {
+        "edge": {
+          "saturation": 0.88,
+          "value": 0.98,
+          "whiteMix": 0.12
+        },
+        "halo": {
+          "saturation": 0.82,
+          "value": 0.90,
+          "whiteMix": 0.08
+        },
+        "baseDust": {
+          "saturation": 0.62,
+          "value": 0.58,
+          "whiteMix": 0.04
+        },
+        "colorGrains": {
+          "saturation": 0.78,
+          "value": 0.88,
+          "whiteMix": 0.05
+        }
+      }
+    },
+    "faceParticleCount": 6400,
+    "faceParticleLayers": {
+      "baseDust": {
+        "count": 4160,
+        "colorMode": "OBJECT_SPACE_SPECTRAL",
+        "gradientStyle": "baseDust",
+        "strength": 0.38,
+        "sizeMin": 0.0018,
+        "sizeMax": 0.0035,
+        "sizeExponent": 1.0,
+        "normalJitter": 0.0015
+      },
+      "colorGrains": {
+        "count": 2240,
+        "colorMode": "OBJECT_SPACE_SPECTRAL",
+        "gradientStyle": "colorGrains",
+        "strength": 0.72,
+        "sizeMin": 0.0042,
+        "sizeMax": 0.0075,
+        "sizeExponent": 1.0,
+        "normalJitter": 0.0015
+      }
+    },
+    "cameraAzimuthDegrees": -90,
+    "cameraElevationDegrees": 7,
+    "cameraDistance": 8,
+    "cameraTarget": [0.0, 0.0, 0.0],
+    "orthographicScale": 5.87,
+    "glowThreshold": 0.9,
+    "glowSize": 6,
+    "rotationCycleSeconds": 12,
+    "phaseDegrees": [0, 15, 30, 45, 60, 90, 120, 180, 240, 360],
+    "motionContactFrameCount": 12,
+    "motionContactColumns": 6,
+    "seed": 20260717
+  },
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 24,
+      "samples": 10,
+      "output": "output/wireframe-stella-octangula-preview.mp4"
+    }
+  }
+}

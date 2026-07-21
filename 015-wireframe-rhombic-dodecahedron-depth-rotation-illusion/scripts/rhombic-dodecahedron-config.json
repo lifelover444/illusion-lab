@@ -1,0 +1,111 @@
+{
+  "renderMode": "depth-independent-contour-rhombic-dodecahedron-014-aligned",
+  "geometry": {
+    "latticeUnit": 0.86,
+    "radialWaistScale": 0.92,
+    "initialPhaseDegrees": 22.5
+  },
+  "style": {
+    "cameraProjection": "ORTHO",
+    "showBackEdges": true,
+    "continuousShell": true,
+    "directionalLighting": false,
+    "depthColorGradient": false,
+    "independentParticleMotion": false,
+    "vertexAccents": false,
+    "interiorDustCount": 0,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "guideLine": {
+      "enabled": true,
+      "color": [0.45, 0.58, 0.90],
+      "maskEmissionStrength": 1.0,
+      "radius": 0.002,
+      "opaque": true,
+      "breathing": false,
+      "directionalWeighting": false,
+      "depthIndependent": true,
+      "panelOcclusion": false,
+      "internalOpacity": 0.10,
+      "outerSilhouetteOpacity": 0.20,
+      "intersectionAccumulation": false,
+      "compositeMethod": "ALPHA_OVER_MAX_MASK"
+    },
+    "edgeFilamentSlotsPerUnit": 24,
+    "edgeFilamentKeepRatio": 0.82,
+    "edgeFilamentSlotJitter": 0.24,
+    "edgeFilamentPointSizeMin": 0.0025,
+    "edgeFilamentPointSizeMax": 0.0043,
+    "edgeFilamentSurfaceOffset": 0.004,
+    "edgeFilamentColor": [0.69, 0.76, 1.0],
+    "edgeFilamentStrength": 1.47,
+    "edgeHaloStride": 5,
+    "edgeHaloSizeMultiplier": 2.3,
+    "edgeHaloColor": [0.52, 0.61, 1.0],
+    "edgeHaloStrength": 1.1,
+    "edgeHaloOpacity": 0.28,
+    "edgeBreathAmount": 0.06,
+    "edgeBreathCycleSeconds": 6,
+    "faceParticleCount": 9300,
+    "faceParticleSizeMin": 0.0022,
+    "faceParticleSizeMax": 0.0045,
+    "faceParticleSizeExponent": 1.0,
+    "faceParticleJitter": 0.0015,
+    "faceParticleEdgeTrenchWidth": 0.035,
+    "faceParticleEdgeTrenchDensityReduction": 0.22,
+    "faceParticlePalette": [
+      [0.76, 0.87, 1.0]
+    ],
+    "faceParticleStrengthMin": 1.0,
+    "faceParticleStrengthMax": 1.0,
+    "facePanel": {
+      "enabled": true,
+      "color": [0.025, 0.055, 0.13],
+      "alpha": 0.24,
+      "emissionStrength": 0.35,
+      "renderMethod": "DITHERED",
+      "doubleSided": true,
+      "transparencyOverlap": true,
+      "castShadows": false,
+      "refraction": false,
+      "fresnel": false
+    },
+    "cameraAzimuthDegrees": -90,
+    "cameraElevationDegrees": 7,
+    "cameraDistance": 8,
+    "cameraTarget": [0.0, 0.0, 0.0],
+    "orthographicScale": 5.75,
+    "glowThreshold": 1.25,
+    "glowSize": 3,
+    "rotationCycleSeconds": 12,
+    "phaseDegrees": [0, 22.5, 45, 67.5, 90, 135, 180, 270, 360],
+    "motionContactFrameCount": 12,
+    "motionContactColumns": 6,
+    "seed": 20260717
+  },
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 24,
+      "samples": 12,
+      "output": "output/wireframe-rhombic-dodecahedron-014-aligned-preview.mp4"
+    },
+    "hd": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 24,
+      "samples": 24,
+      "output": "output/wireframe-rhombic-dodecahedron-014-aligned-hd-720x1280.mp4"
+    },
+    "hd60": {
+      "width": 720,
+      "height": 1280,
+      "fps": 60,
+      "seconds": 24,
+      "samples": 24,
+      "output": "output/wireframe-rhombic-dodecahedron-014-aligned-hd60-720x1280.mp4"
+    }
+  }
+}

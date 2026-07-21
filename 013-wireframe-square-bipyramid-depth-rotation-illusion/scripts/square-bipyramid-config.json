@@ -1,0 +1,121 @@
+{
+  "renderMode": "ambiguous-crystal-stardust",
+  "geometry": {
+    "waistRadius": 1.42,
+    "halfHeight": 1.72,
+    "initialPhaseDegrees": 45
+  },
+  "style": {
+    "cameraProjection": "ORTHO",
+    "showBackEdges": true,
+    "backgroundColor": [0.0, 0.0, 0.0],
+    "faceColor": [0.008, 0.016, 0.055],
+    "faceAlpha": 0.12,
+    "faceEmissionStrength": 0.18,
+    "edgeCoreColor": [0.88, 0.97, 1.0],
+    "edgeCoreStrength": 3.9,
+    "edgeCoreRadius": 0.005,
+    "edgeGlowColor": [0.36, 0.62, 1.0],
+    "edgeGlowStrength": 0.5,
+    "edgeGlowRadius": 0.0068,
+    "waistLineScale": 1.18,
+    "edgePalette": [
+      [0.94, 1.0, 1.0],
+      [0.50, 0.94, 1.0],
+      [0.66, 0.74, 1.0],
+      [0.88, 0.58, 1.0],
+      [0.64, 1.0, 0.90]
+    ],
+    "edgeCrystalCount": 760,
+    "edgeCrystalSizeMin": 0.0035,
+    "edgeCrystalSizeMax": 0.012,
+    "edgeCrystalJitter": 0.012,
+    "particleCount": 3200,
+    "particleSizeMin": 0.0018,
+    "particleSizeMax": 0.0065,
+    "particleJitter": 0.008,
+    "particlePalette": [
+      [0.90, 0.98, 1.0],
+      [0.54, 0.92, 1.0],
+      [0.54, 0.70, 1.0],
+      [0.74, 0.60, 1.0],
+      [0.94, 0.66, 0.96],
+      [0.62, 1.0, 0.88]
+    ],
+    "particleStrengthMin": 1.1,
+    "particleStrengthMax": 3.8,
+    "particleEdgeBoost": 0.22,
+    "interiorDust": {
+      "count": 1500,
+      "boundaryPadding": 0.08,
+      "sizeMin": 0.001,
+      "sizeMax": 0.0048,
+      "strengthMin": 0.28,
+      "strengthMax": 0.95,
+      "palette": [
+        [0.34, 0.56, 0.72],
+        [0.38, 0.70, 0.82],
+        [0.46, 0.54, 0.84],
+        [0.60, 0.44, 0.78],
+        [0.68, 0.76, 0.82]
+      ],
+      "layers": [
+        {
+          "name": "ambient",
+          "count": 1050,
+          "sizeScale": 0.72,
+          "strengthScale": 0.62,
+          "angularDriftDegrees": 0.7,
+          "verticalBob": 0.016,
+          "phaseDegrees": 0
+        },
+        {
+          "name": "chromatic",
+          "count": 375,
+          "sizeScale": 1.0,
+          "strengthScale": 1.0,
+          "angularDriftDegrees": -0.55,
+          "verticalBob": 0.024,
+          "phaseDegrees": 120
+        },
+        {
+          "name": "glints",
+          "count": 75,
+          "sizeScale": 1.45,
+          "strengthScale": 1.28,
+          "angularDriftDegrees": 0.38,
+          "verticalBob": 0.012,
+          "phaseDegrees": 240
+        }
+      ]
+    },
+    "cameraAzimuthDegrees": -90,
+    "cameraElevationDegrees": 8,
+    "cameraDistance": 8,
+    "cameraTarget": [0.0, 0.0, 0.0],
+    "orthographicScale": 5.4,
+    "glowThreshold": 0.75,
+    "glowSize": 6,
+    "rotationCycleSeconds": 12,
+    "phaseDegrees": [0, 30, 45, 60, 90, 135, 180, 270, 360],
+    "seed": 20260715
+  },
+  "profiles": {
+    "preview": {
+      "width": 360,
+      "height": 640,
+      "fps": 15,
+      "seconds": 24,
+      "samples": 12,
+      "output": "output/wireframe-square-bipyramid-preview.mp4"
+    },
+    "final": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "seconds": 24,
+      "samples": 24,
+      "output": "output/wireframe-square-bipyramid-depth-rotation-illusion.mp4"
+    }
+  }
+}

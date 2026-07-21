@@ -1,4 +1,6 @@
 node_modules/
+__pycache__/
+*.pyc
 .worktrees/
 dist/
 .vite/
@@ -27,3 +29,13 @@ verify/
 010-interlocked-stellar-rings-depth-illusion/output/
 011-truncated-cube-depth-rotation-illusion/scene/
 011-truncated-cube-depth-rotation-illusion/output/
+012-seamless-triangular-bipyramid-depth-rotation-illusion/scene/
+012-seamless-triangular-bipyramid-depth-rotation-illusion/output/
+013-wireframe-square-bipyramid-depth-rotation-illusion/scene/
+013-wireframe-square-bipyramid-depth-rotation-illusion/output/
+014-wireframe-tetragonal-trapezohedron-depth-rotation-illusion/scene/
+014-wireframe-tetragonal-trapezohedron-depth-rotation-illusion/output/
+015-wireframe-rhombic-dodecahedron-depth-rotation-illusion/scene/
+015-wireframe-rhombic-dodecahedron-depth-rotation-illusion/output/
+016-wireframe-stella-octangula-depth-rotation-illusion/scene/
+016-wireframe-stella-octangula-depth-rotation-illusion/output/
